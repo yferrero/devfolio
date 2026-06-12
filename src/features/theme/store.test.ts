@@ -6,8 +6,9 @@ describe('theme store', () => {
     useThemeStore.setState({ theme: 'light' })
   })
 
-  it('starts in light mode', () => {
-    expect(useThemeStore.getState().theme).toBe('light')
+  it('defaults to dark mode', () => {
+    // getInitialState is unaffected by the setState in beforeEach.
+    expect(useThemeStore.getInitialState().theme).toBe('dark')
   })
 
   it('toggles between light and dark', () => {

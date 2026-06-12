@@ -4,7 +4,7 @@ const dateFormat = new Intl.DateTimeFormat('en', { dateStyle: 'medium' })
 
 export function RepoCard({ repo }: { repo: Repo }) {
   return (
-    <li className="rounded-xl border border-gray-200 p-4 transition-colors hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-600">
+    <li className="card p-4">
       <div className="flex items-baseline justify-between gap-2">
         <a
           href={repo.html_url}

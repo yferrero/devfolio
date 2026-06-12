@@ -30,13 +30,13 @@ export function FilterBar({
           onChange={(e) => onQueryChange(e.target.value)}
           placeholder="Search projects…"
           aria-label="Search projects"
-          className="w-full max-w-sm rounded-lg border border-gray-300 px-3 py-1.5 text-sm outline-none focus:border-gray-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-gray-400"
+          className="input w-full max-w-sm"
         />
         <select
           value={sort}
           onChange={(e) => onSortChange(e.target.value as SortOrder)}
           aria-label="Sort projects"
-          className="rounded-lg border border-gray-300 px-2 py-1.5 text-sm dark:border-gray-700 dark:bg-gray-900"
+          className="input"
         >
           <option value="newest">Newest first</option>
           <option value="title">By title</option>
@@ -77,7 +77,7 @@ function TagButton({
       aria-pressed={active}
       className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
         active
-          ? 'bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900'
+          ? 'bg-primary-500 text-white'
           : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
       }`}
     >

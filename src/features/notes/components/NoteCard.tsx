@@ -9,7 +9,7 @@ export function NoteCard({ note }: { note: Note }) {
   const dispatch = useAppDispatch()
 
   return (
-    <li className="rounded-xl border border-gray-200 dark:border-gray-800">
+    <li className="card">
       <button
         type="button"
         onClick={() => setFlipped((f) => !f)}

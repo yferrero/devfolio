@@ -36,21 +36,18 @@ export default function PomodoroPage() {
 
       <div className="mt-8 flex justify-center gap-3">
         {isRunning ? (
-          <button type="button" onClick={pause} className={buttonClass}>
+          <button type="button" onClick={pause} className="btn-primary">
             Pause
           </button>
         ) : (
-          <button type="button" onClick={start} className={buttonClass}>
+          <button type="button" onClick={start} className="btn-primary">
             Start
           </button>
         )}
-        <button type="button" onClick={reset} className={buttonClass}>
+        <button type="button" onClick={reset} className="btn-outline">
           Reset
         </button>
       </div>
     </section>
   )
 }
-
-const buttonClass =
-  'rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800'

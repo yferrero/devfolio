@@ -34,7 +34,7 @@ export default function GithubPage() {
           <button
             type="button"
             onClick={() => refetch()}
-            className="mt-3 rounded-lg border border-gray-300 px-3 py-1.5 text-sm hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800"
+            className="btn-outline mt-3"
           >
             Retry
           </button>

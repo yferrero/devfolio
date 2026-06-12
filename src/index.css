@@ -1,4 +1,60 @@
+@import "@fontsource-variable/inter";
 @import "tailwindcss";
 
 /* Dark mode is driven by a `dark` class on <html>, toggled by the theme store. */
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Design tokens (SaaS UI-inspired): violet primary palette around #8952e0
+   and Inter Variable everywhere. Tokens become regular utilities, e.g.
+   bg-primary-500, text-primary-300. */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary-50: #f5f0fd;
+  --color-primary-100: #ece2fb;
+  --color-primary-200: #d8c5f7;
+  --color-primary-300: #c0a1f0;
+  --color-primary-400: #a379e7;
+  --color-primary-500: #8952e0;
+  --color-primary-600: #7437d2;
+  --color-primary-700: #612cb2;
+  --color-primary-800: #50268f;
+  --color-primary-900: #422273;
+  --color-primary-950: #2a1352;
+}
+
+/* Shared component classes. The rule of thumb in this repo is utilities in
+   JSX; these few exist because they repeat across every feature. */
+@layer components {
+  .card {
+    @apply rounded-xl border border-gray-200 bg-white/60 transition-colors hover:border-primary-400/60 dark:border-gray-800 dark:bg-gray-900/40 dark:hover:border-primary-500/60;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-primary-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-600 disabled:opacity-40;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium transition-colors hover:border-primary-400 hover:text-primary-700 dark:border-gray-700 dark:hover:border-primary-400 dark:hover:text-primary-300;
+  }
+
+  .input {
+    @apply rounded-lg border border-gray-300 bg-white/60 px-3 py-2 text-sm outline-none transition-colors focus:border-primary-500 dark:border-gray-700 dark:bg-gray-900/60 dark:focus:border-primary-400;
+  }
+
+  .gradient-text {
+    @apply bg-linear-to-r from-primary-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+}
+
+/* The hero's layered radial glow, lifted from the reference page. Five
+   stacked radial-gradients are far more readable here than as an
+   arbitrary-value utility class. */
+.hero-glow {
+  background-image:
+    radial-gradient(at top left, #4f1d9e 30%, transparent 80%),
+    radial-gradient(at bottom, #2ab4d9 0%, transparent 60%),
+    radial-gradient(at bottom left, #06b6d4 0%, transparent 50%),
+    radial-gradient(at top right, #1d979e, transparent),
+    radial-gradient(at bottom right, #4f1d9e 0%, transparent 50%);
+}

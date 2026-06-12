@@ -83,7 +83,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="self-start rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white disabled:opacity-40 dark:bg-gray-100 dark:text-gray-900"
+        className="btn-primary self-start"
       >
         {isSubmitting ? 'Sending…' : 'Send message'}
       </button>
@@ -117,5 +117,4 @@ function Field({
   )
 }
 
-const inputClass =
-  'rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:border-gray-500 aria-[invalid=true]:border-red-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-gray-400'
+const inputClass = 'input aria-[invalid=true]:border-red-500'

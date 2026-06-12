@@ -45,8 +45,13 @@ src/
 
 - **Routing**: React Router with `createBrowserRouter`; every feature page is
   lazy-loaded (one chunk per route).
-- **Dark mode**: a `dark` class on `<html>` driven by the theme store;
-  Tailwind v4 custom variant in `index.css`.
+- **Dark mode**: a `dark` class on `<html>` driven by the theme store
+  (dark by default); Tailwind v4 custom variant in `index.css`, plus an
+  anti-flash inline script in `index.html`.
+- **Styling**: Tailwind utilities in JSX. Design tokens (violet `primary`
+  palette, Inter font) live in the `@theme` block in `index.css`; the few
+  classes repeated across every feature (`card`, `btn-primary`,
+  `btn-outline`, `input`, `gradient-text`) are defined once there too.
 - **Testing**: Vitest + React Testing Library; MSW intercepts HTTP in tests
   (`src/test/server.ts`), so fetching components are tested against the
   real fetch path with faked responses.

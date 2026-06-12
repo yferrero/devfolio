@@ -24,8 +24,8 @@ export function Row({ item, selected, onSelect }: RowProps) {
         onClick={() => onSelect(item.id)}
         className={`flex w-full items-center justify-between rounded-lg border px-3 py-2 text-sm transition-colors ${
           selected
-            ? 'border-gray-900 dark:border-gray-100'
-            : 'border-gray-200 hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-600'
+            ? 'border-primary-500'
+            : 'border-gray-200 hover:border-primary-400/60 dark:border-gray-800 dark:hover:border-primary-500/60'
         }`}
       >
         <span>

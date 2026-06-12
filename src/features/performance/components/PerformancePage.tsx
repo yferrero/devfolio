@@ -51,12 +51,12 @@ export default function PerformancePage() {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Filter items…"
           aria-label="Filter items"
-          className="w-full max-w-xs rounded-lg border border-gray-300 px-3 py-1.5 text-sm outline-none focus:border-gray-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-gray-400"
+          className="input w-full max-w-xs"
         />
         <button
           type="button"
           onClick={() => forceRender((n) => n + 1)}
-          className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800"
+          className="btn-outline"
         >
           Re-render parent
         </button>
