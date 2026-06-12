@@ -1,5 +1,7 @@
 import { Suspense } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { ErrorBoundary } from 'react-error-boundary'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { ErrorFallback } from '@/components/ErrorFallback'
 import { Spinner } from '@/components/Spinner'
 import { ThemeToggle, useApplyTheme } from '@/features/theme'
 
@@ -14,6 +16,7 @@ const navItems = [
 
 export function Layout() {
   useApplyTheme()
+  const location = useLocation()
 
   return (
     <div className="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
@@ -41,9 +44,13 @@ export function Layout() {
         </div>
       </header>
       <main className="mx-auto max-w-4xl px-4 py-8">
-        <Suspense fallback={<Spinner />}>
-          <Outlet />
-        </Suspense>
+        {/* Catches render errors from any page. Keyed by pathname so
+            navigating away from a crashed page resets the boundary. */}
+        <ErrorBoundary FallbackComponent={ErrorFallback} key={location.pathname}>
+          <Suspense fallback={<Spinner />}>
+            <Outlet />
+          </Suspense>
+        </ErrorBoundary>
       </main>
     </div>
   )

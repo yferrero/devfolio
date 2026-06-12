@@ -28,7 +28,7 @@ Vitest + React Testing Library
 
 - [x] Phase 1 — Scaffold: Vite, Tailwind, Router, theme toggle (Zustand), CI/CD
 - [x] Phase 2 — Projects gallery (plain React state, derived state, URL params)
-- [ ] Phase 3 — API layer + GitHub feed (TanStack Query, error boundary)
+- [x] Phase 3 — API layer + GitHub feed (TanStack Query, error boundary)
 - [ ] Phase 4 — Notes / flashcards (Redux Toolkit)
 - [ ] Phase 5 — Pomodoro timer (Zustand, timers, effect cleanup)
 - [ ] Phase 6 — Contact form (React Hook Form + Zod)
