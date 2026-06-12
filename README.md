@@ -32,5 +32,5 @@ Vitest + React Testing Library
 - [x] Phase 4 — Notes / flashcards (Redux Toolkit)
 - [x] Phase 5 — Pomodoro timer (Zustand, timers, effect cleanup)
 - [x] Phase 6 — Contact form (React Hook Form + Zod)
-- [ ] Phase 7 — Tests for all features (Vitest, RTL, MSW)
+- [x] Phase 7 — Tests for all features (Vitest, RTL, MSW)
 - [ ] Phase 8 — Polish: performance page, deploy

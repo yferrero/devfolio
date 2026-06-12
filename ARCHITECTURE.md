@@ -46,6 +46,8 @@ src/
   lazy-loaded (one chunk per route).
 - **Dark mode**: a `dark` class on `<html>` driven by the theme store;
   Tailwind v4 custom variant in `index.css`.
-- **Testing**: Vitest + React Testing Library (+ MSW for API mocking, phase 7).
+- **Testing**: Vitest + React Testing Library; MSW intercepts HTTP in tests
+  (`src/test/server.ts`), so fetching components are tested against the
+  real fetch path with faked responses.
 - **CI/CD**: GitHub Actions — lint, typecheck, test, build on every push/PR;
   deploy to GitHub Pages from `main`.
