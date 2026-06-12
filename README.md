@@ -31,6 +31,6 @@ Vitest + React Testing Library
 - [x] Phase 3 — API layer + GitHub feed (TanStack Query, error boundary)
 - [x] Phase 4 — Notes / flashcards (Redux Toolkit)
 - [x] Phase 5 — Pomodoro timer (Zustand, timers, effect cleanup)
-- [ ] Phase 6 — Contact form (React Hook Form + Zod)
+- [x] Phase 6 — Contact form (React Hook Form + Zod)
 - [ ] Phase 7 — Tests for all features (Vitest, RTL, MSW)
 - [ ] Phase 8 — Polish: performance page, deploy
