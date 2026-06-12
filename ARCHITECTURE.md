@@ -19,7 +19,11 @@ src/
 ## Rules
 
 1. **Features never import from each other.** They may import from
-   `components/`, `lib/`, and their own files only.
+   `components/`, `lib/`, and their own files only. One deliberate
+   exception: the Redux store is app-level wiring (`app/store.ts`), so
+   Redux-using features import the pre-typed `useAppSelector` /
+   `useAppDispatch` hooks from there — the slice itself still lives in
+   the feature.
 2. **Each feature exposes a public API via `index.ts`.** Pages are default
    exports (for `lazy()`); everything else is internal.
 3. **One state library per feature** — that's the point of the project:
