@@ -8,6 +8,24 @@ export function Home() {
         ecosystem — plain state, TanStack Query, Redux Toolkit, Zustand, and
         React Hook Form.
       </p>
+      <div className="mt-6 flex gap-4 text-sm">
+        <a
+          href="https://github.com/yferrero/devfolio"
+          target="_blank"
+          rel="noreferrer"
+          className="underline"
+        >
+          Source on GitHub
+        </a>
+        <a
+          href="https://github.com/yferrero/devfolio/blob/main/ARCHITECTURE.md"
+          target="_blank"
+          rel="noreferrer"
+          className="underline"
+        >
+          Architecture notes
+        </a>
+      </div>
     </section>
   )
 }

@@ -15,6 +15,7 @@ const GithubPage = lazy(() => import('@/features/github'))
 const NotesPage = lazy(() => import('@/features/notes'))
 const PomodoroPage = lazy(() => import('@/features/pomodoro'))
 const ContactPage = lazy(() => import('@/features/contact'))
+const PerformancePage = lazy(() => import('@/features/performance'))
 
 export const router = createBrowserRouter(
   [
@@ -29,6 +30,7 @@ export const router = createBrowserRouter(
         { path: 'notes', element: <NotesPage /> },
         { path: 'pomodoro', element: <PomodoroPage /> },
         { path: 'contact', element: <ContactPage /> },
+        { path: 'performance', element: <PerformancePage /> },
         { path: '*', element: <NotFound /> },
       ],
     },

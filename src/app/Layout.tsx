@@ -12,6 +12,7 @@ const navItems = [
   { to: '/notes', label: 'Notes' },
   { to: '/pomodoro', label: 'Pomodoro' },
   { to: '/contact', label: 'Contact' },
+  { to: '/performance', label: 'Performance' },
 ]
 
 export function Layout() {

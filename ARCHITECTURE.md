@@ -36,6 +36,7 @@ src/
    | pomodoro | Zustand                        | Small global state without providers         |
    | contact  | React Hook Form + Zod          | Form state is its own category               |
    | theme    | Zustand + `persist`            | Tiny cross-cutting state                     |
+   | performance | memo / useMemo / useCallback | Referential identity, and when memoization pays |
 
 4. **Shared code is extracted only when a second consumer appears** — don't
    pre-build abstractions.
