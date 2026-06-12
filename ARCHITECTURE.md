@@ -1,0 +1,47 @@
+# Architecture
+
+A portfolio app that doubles as an interview-prep playground. Each feature is
+a **complete vertical slice** — UI, state, and data fetching live together in
+one folder — and each feature deliberately uses a **different state approach**
+so the codebase is a side-by-side comparison of the React ecosystem.
+
+## Structure
+
+```
+src/
+├── app/          # App shell: router, layout, home, 404
+├── components/   # Shared, dumb UI (Spinner, ...). No business logic.
+├── lib/          # Shared utilities (api wrapper, ...). No React.
+├── test/         # Test setup
+└── features/     # One folder per feature, self-contained
+```
+
+## Rules
+
+1. **Features never import from each other.** They may import from
+   `components/`, `lib/`, and their own files only.
+2. **Each feature exposes a public API via `index.ts`.** Pages are default
+   exports (for `lazy()`); everything else is internal.
+3. **One state library per feature** — that's the point of the project:
+
+   | Feature  | Approach                       | Why it fits                                  |
+   |----------|--------------------------------|----------------------------------------------|
+   | projects | `useState` + derived state     | Local UI state needs no library              |
+   | github   | TanStack Query                 | Server state: caching, refetching, errors    |
+   | notes    | Redux Toolkit                  | Complex client state, reducers, selectors    |
+   | pomodoro | Zustand                        | Small global state without providers         |
+   | contact  | React Hook Form + Zod          | Form state is its own category               |
+   | theme    | Zustand + `persist`            | Tiny cross-cutting state                     |
+
+4. **Shared code is extracted only when a second consumer appears** — don't
+   pre-build abstractions.
+
+## Cross-cutting decisions
+
+- **Routing**: React Router with `createBrowserRouter`; every feature page is
+  lazy-loaded (one chunk per route).
+- **Dark mode**: a `dark` class on `<html>` driven by the theme store;
+  Tailwind v4 custom variant in `index.css`.
+- **Testing**: Vitest + React Testing Library (+ MSW for API mocking, phase 7).
+- **CI/CD**: GitHub Actions — lint, typecheck, test, build on every push/PR;
+  deploy to GitHub Pages from `main`.
